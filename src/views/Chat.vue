@@ -8,7 +8,7 @@
             </p>
             <div class="messages" v-chat-scroll="{always:false, smooth: true}">
                 <div v-for="(message,index) in messages" :key="index">
-                    <span class="text-info">[{{ message.name }}]</span>
+                    <span class="text-info">[{{ message.name }}] </span>
                     <span>{{ message.message }}</span>
                     <span class="text-secondary time">{{ message.timestamp }}</span>
                 </div>
@@ -45,7 +45,7 @@ export default {
                     let doc = change.doc;
                     this.messages.push({
                         id: doc.id,
-                        name: doc.data(),
+                        name: doc.data().name,
                         message: doc.data().message,
                         timestamp: moment(doc.data().timestamp).format('D/M/yyyy H:mm:ss')
                     });
