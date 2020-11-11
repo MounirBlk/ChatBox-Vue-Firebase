@@ -4,7 +4,7 @@ import firebase from 'firebase/app';
 var firebaseConfig = {
     apiKey: "",
     authDomain: "",
-    databaseURL: "h",
+    databaseURL: "",
     projectId: "",
     storageBucket: "",
     messagingSenderId: "",
