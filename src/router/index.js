@@ -20,6 +20,21 @@ const routes = [{
         name: 'Login',
         component: () =>
             import ('../views/Login.vue')
+    },
+    {
+        path: '/chat',
+        name: 'Chat',
+        props: true,
+        beforeEnter: (to, from, next) => {
+            if (to.params.name) {
+                next()
+            } else {
+                next({ name: 'Login' })
+            }
+        },
+        component: () =>
+            import ('../views/Chat.vue')
+
     }
 ]
 
